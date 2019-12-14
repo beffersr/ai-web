@@ -24,13 +24,15 @@ RUN django-admin startproject ai
 
 RUN ls /ai
 RUN cd /ai
+RUN echo "After cd"
+RUN ls
 
-RUN python manage.py migrate
+RUN python3 manage.py migrate
 
-RUN python manage.py createsuperuser
+RUN python3 manage.py createsuperuser
 EXPOSE 8000
 
-RUN python manage.py runserver
+RUN python3 manage.py runserver
 
 
 
