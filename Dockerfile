@@ -21,6 +21,8 @@ RUN pip3 install --upgrade tensorflow
 RUN yum -y install django
 
 RUN django-admin startproject ai
+RUN find / -name "ai"
+RUN ls /ai
 
 RUN cd /ai
 
