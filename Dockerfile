@@ -22,22 +22,22 @@ RUN yum -y install django
 
 RUN django-admin startproject ai
 
-RUN ls /ai
-RUN cd /ai/ai
-RUN echo "After cd"
-RUN ls
+# RUN ls /ai
+# RUN cd /ai/ai
+# RUN echo "After cd"
+# RUN ls
 
-RUN python manage.py migrate
+# RUN python manage.py migrate
 
-RUN python manage.py createsuperuser
+# RUN python manage.py createsuperuser
 EXPOSE 8000
 
-RUN python manage.py runserver
+# RUN python manage.py runserver
 
-
+#
 
 
 # COPY etc/umask-ai-map.sh /etc/umask-ai-map.sh
 # RUN chmod +x /etc/umask-ai-map.sh
 # RUN /etc/umask-ai-map.sh
-# CMD while true; do sleep 5 ; done
+CMD while true; do sleep 5 ; done
