@@ -26,7 +26,7 @@ RUN cd /ai
 RUN ls -la
 RUN ls ai -la
 
-# RUN python manage.py migrate
+RUN python /ai/manage.py migrate
 
 # RUN python manage.py createsuperuser
 EXPOSE 8000
