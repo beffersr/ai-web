@@ -29,7 +29,7 @@ RUN python /ai/manage.py migrate
 # RUN python /ai/manage.py createsuperuser
 EXPOSE 8000
 
-CMD python /ai/manage.py runserver
+CMD python /ai/manage.py runserver 0.0.0.0:8000
 
 #
 
