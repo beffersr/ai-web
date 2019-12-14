@@ -22,10 +22,9 @@ RUN yum -y install django
 
 RUN django-admin startproject ai
 
-# RUN ls /ai
-# RUN cd /ai/ai
-# RUN echo "After cd"
-# RUN ls
+RUN cd /ai
+RUN ls -la
+RUN ls ai -la
 
 # RUN python manage.py migrate
 
