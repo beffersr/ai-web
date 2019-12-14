@@ -23,16 +23,16 @@ RUN yum -y install django
 RUN django-admin startproject ai
 
 RUN ls /ai
-RUN cd /ai
+RUN cd /ai/ai
 RUN echo "After cd"
 RUN ls
 
-RUN python3 manage.py migrate
+RUN python manage.py migrate
 
-RUN python3 manage.py createsuperuser
+RUN python manage.py createsuperuser
 EXPOSE 8000
 
-RUN python3 manage.py runserver
+RUN python manage.py runserver
 
 
 
