@@ -1,9 +1,0 @@
-CREATE TABLE `qqafdelingen` (`id` int(11) NOT NULL AUTO_INCREMENT, `naam` varchar(32) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-CREATE TABLE `qqaudit_trail` (`id` int(11) NOT NULL AUTO_INCREMENT, `persoon` int(11) NOT NULL, `dt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, `query` varchar(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-CREATE TABLE `qqgeopackages` (`id` int(11) NOT NULL AUTO_INCREMENT, `naam` varchar(64) NOT NULL, `kaartnaam` varchar(64) NOT NULL, `afdeling` int(11) NOT NULL, `onderwerp` int(11) NOT NULL, `soort` char(6) NOT NULL,  `brongeopackage` varchar(255) NOT NULL, `indatalink` varchar(255) NOT NULL, `datalink` varchar(255) NOT NULL, `opmaak` varchar(255) NOT NULL, `wms` char(1) NOT NULL, `wfs` char(1) NOT NULL, `wcs` char(1) NOT NULL, `wmts` char(1) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-CREATE TABLE `qqonderwerpen` (`id` int(11) NOT NULL AUTO_INCREMENT, `naam` varchar(64) NOT NULL, `afkorting` varchar(32) NOT NULL, `afdeling` int(11) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-CREATE TABLE `qqpersonen` (`id` int(11) NOT NULL AUTO_INCREMENT, `naam` varchar(32) NOT NULL, `afdeling` int(11) NOT NULL, `email` varchar(32) NOT NULL, `ad_account` varchar(32) NOT NULL, `password` varchar(255) NOT NULL, `admin` char(1) NOT NULL, `afd_admin` char(1) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-
-INSERT INTO `qqafdelingen` (`naam`) VALUES ('SSC-Campus/RDG');
-INSERT INTO `qqonderwerpen` (`naam`, `afkorting`, `afdeling`) VALUES ('SSC-Campus/RDG', 'RDG', 'SSC-Campus/RDG');
-INSERT INTO `qqpersonen` (`naam`, `afdeling`, `email`, `ad_account`, `password`, `admin`, `afd_admin`) VALUES ('Gisbeheer', 1, 'gisbeheer', 'gisbeheer', '57c2877c1d84c4b49f3289657deca65c', 'J', 'N');
