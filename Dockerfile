@@ -18,6 +18,8 @@ RUN source my_tensorflow/bin/activate
 
 RUN pip3 install --upgrade tensorflow
 
+EXPOSE 5000
+
 COPY etc/umask-ai-map.sh /etc/umask-ai-map.sh
 RUN chmod +x /etc/umask-ai-map.sh
 CMD /etc/umask-ai-mappen.sh
