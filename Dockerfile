@@ -29,7 +29,7 @@ RUN python /ai/manage.py migrate
 # RUN python /ai/manage.py createsuperuser
 EXPOSE 8000
 
-CMD python /ai/manage.py runserver 0.0.0.0:8000
+# CMD python /ai/manage.py runserver 0.0.0.0:8000
 
 #
 
@@ -37,4 +37,4 @@ CMD python /ai/manage.py runserver 0.0.0.0:8000
 # COPY etc/umask-ai-map.sh /etc/umask-ai-map.sh
 # RUN chmod +x /etc/umask-ai-map.sh
 # RUN /etc/umask-ai-map.sh
-# CMD while true; do sleep 5 ; done
+CMD while true; do sleep 5 ; done
