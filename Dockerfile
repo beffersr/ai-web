@@ -23,5 +23,3 @@ EXPOSE 5000
 COPY etc/umask-ai-map.sh /etc/umask-ai-map.sh
 RUN chmod +x /etc/umask-ai-map.sh
 RUN /etc/umask-ai-map.sh
-
-CMD while true; do sleep 5 ; done
