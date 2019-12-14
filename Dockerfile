@@ -18,9 +18,23 @@ RUN source my_tensorflow/bin/activate
 
 RUN pip3 install --upgrade tensorflow
 
-EXPOSE 5000
+RUN yum -y install django
+
+RUN django-admin startproject ai
+
+RUN cd /ai
+
+RUN python manage.py migrate
+
+RUN python manage.py createsuperuser
+EXPOSE 8000
+
+RUN python manage.py runserver
+
+
+
 
 # COPY etc/umask-ai-map.sh /etc/umask-ai-map.sh
 # RUN chmod +x /etc/umask-ai-map.sh
 # RUN /etc/umask-ai-map.sh
-CMD while true; do sleep 5 ; done
+# CMD while true; do sleep 5 ; done
