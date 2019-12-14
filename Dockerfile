@@ -26,10 +26,10 @@ RUN cd /ai
 
 RUN python /ai/manage.py migrate
 
-# RUN python manage.py createsuperuser
+# RUN python /ai/manage.py createsuperuser
 EXPOSE 8000
 
-RUN python manage.py runserver
+RUN python /ai/manage.py runserver
 
 #
 
