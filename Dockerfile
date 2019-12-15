@@ -5,8 +5,8 @@ ENV TZ Europe/Amsterdam
 
 RUN yum -y install epel-release
 RUN yum -y install python3 python3-pip
-RUN pip install -U pip
-RUN pip install -U virtualenv
+RUN pip3 install -U pip
+RUN pip3 install -U virtualenv
 RUN virtualenv -p python3 /ai
 RUN cd /ai
 RUN source /ai/bin/activate
@@ -14,7 +14,6 @@ RUN pip install --upgrade pip
 RUN pip install tensorflow
 RUN pip --version
 RUN python --version
-RUN tensorflow --version
 
 
 # RUN yum install -y git gcc python-virtualenv
