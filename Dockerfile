@@ -17,13 +17,6 @@ RUN cd /ai_project
 RUN python /ai_project/manage.py migrate
 #RUN python /ai_project/manage.py createsuperuser
 EXPOSE 8000
-
-# CMD python /ai_project/manage.py runserver 0.0.0.0:8000
-
-#
-
-
-# COPY etc/umask-ai-map.sh /etc/umask-ai-map.sh
-# RUN chmod +x /etc/umask-ai-map.sh
-# RUN /etc/umask-ai-map.sh
-CMD while true; do sleep 5 ; done
+RUN echo "\nALLOWED_HOSTS = ['*']" >> /ai_project/ai_project/settings.py
+CMD python /ai_project/manage.py runserver 0.0.0.0:8000
+# CMD while true; do sleep 5 ; done
