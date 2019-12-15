@@ -4,7 +4,7 @@ LABEL maintainer="rob.beffers@rivm.nl"
 ENV TZ Europe/Amsterdam
 
 RUN yum -y install epel-release
-RUN yum -y install python3 python-pip
+RUN yum -y install python3 python3-pip
 RUN pip install -U pip
 RUN pip install -U virtualenv
 RUN virtualenv -p python3 /ai
