@@ -10,37 +10,15 @@ RUN pip3 install -U virtualenv
 RUN virtualenv -p python3 /ai
 RUN cd /ai
 RUN source /ai/bin/activate
-RUN pip install --upgrade pip
-RUN pip install tensorflow
+RUN pip install --upgrade tensorflow
 RUN pip --version
 RUN python --version
-
-
-# RUN yum install -y git gcc python-virtualenv
-
-# RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-# RUN yum -y install python36u
-# RUN yum -y install python36u-pip
-# RUN yum -y install python36u-devel
-
-# RUN mkdir tensorflow_env
-# RUN cd tensorflow_env
-# RUN python3.6 -m venv my_tensorflow
-
-# RUN source my_tensorflow/bin/activate
-
-# RUN pip3 install --upgrade tensorflow
-
-# RUN yum -y install django
-
-# RUN django-admin startproject ai
-
-# RUN cd /ai
-
-# RUN python /ai/manage.py migrate
-
-# RUN python /ai/manage.py createsuperuser
-# EXPOSE 8000
+RUN yum -y install django
+RUN django-admin startproject ai
+RUN cd /ai
+RUN python /ai/manage.py migrate
+#RUN python /ai/manage.py createsuperuser
+EXPOSE 8000
 
 # CMD python /ai/manage.py runserver 0.0.0.0:8000
 
