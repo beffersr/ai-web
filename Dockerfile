@@ -17,6 +17,6 @@ RUN cd /ai_project
 RUN python /ai_project/manage.py migrate
 #RUN python /ai_project/manage.py createsuperuser
 EXPOSE 8000
-RUN echo "\nALLOWED_HOSTS = ['*']" >> /ai_project/ai_project/settings.py
+RUN echo -e "\nALLOWED_HOSTS = ['*']" >> /ai_project/ai_project/settings.py
 CMD python /ai_project/manage.py runserver 0.0.0.0:8000
 # CMD while true; do sleep 5 ; done
