@@ -12,13 +12,13 @@ RUN cd /ai-env
 RUN source /ai-env/bin/activate
 RUN pip install --upgrade tensorflow
 RUN yum -y install django
-RUN django-admin startproject ai-project
-RUN cd /ai-project
-RUN python /ai-project/manage.py migrate
-#RUN python /ai-project/manage.py createsuperuser
+RUN django-admin startproject ai_project
+RUN cd /ai_project
+RUN python /ai_project/manage.py migrate
+#RUN python /ai_project/manage.py createsuperuser
 EXPOSE 8000
 
-# CMD python /ai-project/manage.py runserver 0.0.0.0:8000
+# CMD python /ai_project/manage.py runserver 0.0.0.0:8000
 
 #
 
