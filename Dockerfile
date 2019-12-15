@@ -9,11 +9,12 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 RUN yum -y install python36u
 RUN yum -y install python36u-pip
 RUN yum -y install python36u-devel
-RUN mkdir -p /ai-map/ai
-RUN cd /ai-map/ai
-RUN python3 -m venv /ai-map/ai
 
-RUN source /ai-map/ai/bin/activate
+RUN mkdir tensorflow_env
+RUN cd tensorflow_env
+RUN python3.6 -m venv my_tensorflow
+
+RUN source my_tensorflow/bin/activate
 
 RUN pip3 install --upgrade tensorflow
 
@@ -23,12 +24,12 @@ RUN django-admin startproject ai
 
 RUN cd /ai
 
-RUN python3 /ai/manage.py migrate
+RUN python /ai/manage.py migrate
 
-# RUN python3 /ai/manage.py createsuperuser
+# RUN python /ai/manage.py createsuperuser
 EXPOSE 8000
 
-# CMD python3 /ai/manage.py runserver 0.0.0.0:8000
+# CMD python /ai/manage.py runserver 0.0.0.0:8000
 
 #
 
