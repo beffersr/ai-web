@@ -3,6 +3,20 @@ FROM centos:7
 LABEL maintainer="rob.beffers@rivm.nl"
 ENV TZ Europe/Amsterdam
 
+RUN yum -y install epel-release
+RUN yum -y install python3 python-pip
+RUN pip install -U pip
+RUN pip install -U virtualenv
+RUN virtualenv -p python3 /ai
+RUN cd /ai
+RUN source /ai/bin/activate
+RUN pip install --upgrade pip
+RUN pip install tensorflow
+RUN pip --version
+RUN python --version
+RUN tensorflow --version
+
+
 # RUN yum install -y git gcc python-virtualenv
 
 # RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm
