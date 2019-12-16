@@ -19,7 +19,7 @@ RUN python /ai_project/manage.py migrate
 # Creeer superuser door dit commando op de terminal in de POD uit te voeren!!
 EXPOSE 8000
 RUN echo -e "\nALLOWED_HOSTS.append('*')\nINSTALLED_APPS.append('ai_app')" >> /ai_project/ai_project/settings.py
-RUN python /ai_project/manage.py startapp ai_app
+RUN python /ai_project/manage.py startapp /ai_app
 COPY ai_app/. /ai_app
 COPY ai_project /ai_project/ai_project
 RUN mv /ai_app /ai_project/ai_app
