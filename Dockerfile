@@ -22,6 +22,6 @@ RUN echo -e "\nALLOWED_HOSTS.append('*')\nINSTALLED_APPS.append('ai_app')" >> /a
 RUN python /ai_project/manage.py startapp ai_app
 COPY ai_app/. /ai_app
 COPY ai_project /ai_project/ai_project
-RUM mv /ai_app /ai_project/ai_app
+RUN mv /ai_app /ai_project/ai_app
 CMD python /ai_project/manage.py runserver 0.0.0.0:8000
 # CMD while true; do sleep 5 ; done
